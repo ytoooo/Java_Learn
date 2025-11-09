@@ -8,6 +8,13 @@ spring:
     username: root
     password: 123456
 
+# 文件上传
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+      max-request-size: 100MB
+
 #Mybatis的相关配置
 mybatis:
   configuration:
@@ -18,7 +25,14 @@ mybatis:
 #server:
 #  port: 9090   # 修改为你想要的端口号
 
-#配置事务管理日志级别
+#配置数据库事务管理日志级别
 logging:
   level:
     org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+# 阿里云配置
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: ytooo
+    region: cn-beijing
